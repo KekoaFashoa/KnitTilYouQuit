@@ -1,22 +1,25 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Project page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-project',
   templateUrl: 'project.html'
 })
 export class ProjectPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  public numRows: any;
+  public projectName: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProjectPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams)
+  {
+    this.projectName = this.navParams.get('projectName');
+    this.numRows = this.navParams.get('numRows');
+  }
+
+  generateRows()
+  {
+    let rows = [this.numRows];
+    alert(rows.length);
   }
 
 }

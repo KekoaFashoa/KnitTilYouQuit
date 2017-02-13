@@ -1,12 +1,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Project</ion-title>
+    <ion-title>{{projectName}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row center *ngFor="let row of rows">
+      <ion-item>
+    <ion-label>Current Position</ion-label>
+    <ion-checkbox></ion-checkbox>
+      </ion-item>
+  
+  <ion-item>
+    <ion-label>Finished Row</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+    </ion-row>
+    <button ion-button block (click)="generateRows()">generate</button>
+  </ion-grid>
 
 </ion-content>

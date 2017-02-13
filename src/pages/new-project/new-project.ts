@@ -1,22 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ProjectPage } from '../project/project';
 
-/*
-  Generated class for the NewProject page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+@Injectable()
 @Component({
   selector: 'page-new-project',
   templateUrl: 'new-project.html'
 })
+
 export class NewProjectPage {
+
+  public numRows: any;
+  public projectName: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NewProjectPage');
+  generateRows()
+  {
+    this.navCtrl.push(ProjectPage,
+    {
+      projectName: this.projectName,
+      numRows: this.numRows
+    });
+    alert(this.projectName);
+    alert(this.numRows);
   }
 
 }
