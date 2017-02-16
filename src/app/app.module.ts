@@ -1,10 +1,20 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
 import { MyApp } from './app.component';
+
+// Pages
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { NewProjectPage } from '../pages/new-project/new-project';
 import { ProjectPage } from '../pages/project/project';
+import { SignupPage } from '../pages/signup/signup';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
+import { ProfilePage } from '../pages/profile/profile';
+
+// Providers
+import { FirebaseData } from '../providers/firebase-data';
+import { AuthData } from '../providers/auth-data';
 
 @NgModule({
   declarations: [
@@ -12,8 +22,10 @@ import { ProjectPage } from '../pages/project/project';
     HomePage,
     LoginPage,
     NewProjectPage,
-    ProjectPage
-
+    ProjectPage,
+    SignupPage,
+    ResetPasswordPage,
+    ProfilePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -24,8 +36,14 @@ import { ProjectPage } from '../pages/project/project';
     HomePage,
     LoginPage,
     NewProjectPage,
-    ProjectPage
+    ProjectPage,
+    SignupPage,
+    ResetPasswordPage,
+    ProfilePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    FirebaseData,
+    AuthData
+  ]
 })
 export class AppModule {}

@@ -5,6 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-project',
   templateUrl: 'project.html'
 })
+
 export class ProjectPage {
 
   public numRows: any;
