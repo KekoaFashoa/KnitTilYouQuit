@@ -6,15 +6,12 @@
     <ion-buttons end>
       <button ion-button icon-only (click)="logOut()">
         <ion-icon name="log-out"></ion-icon>
-        </button>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button (click)="goToLogin()">Login</button>
-  <button (click)="goToNewProject()">NewProject</button>
-  <button (click)="goToProject()">Project</button>
   <ion-fab right bottom (click)="goToNewProject()">
     <button ion-fab mini><ion-icon name="add"></ion-icon></button>
   </ion-fab>

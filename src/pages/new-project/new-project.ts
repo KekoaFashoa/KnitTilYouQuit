@@ -11,19 +11,22 @@ import { ProjectPage } from '../project/project';
 export class NewProjectPage {
 
   public numRows: any;
+  public numCols: any;
   public projectName: any;
+  public header: any;
+  public body: any;
+  public footer: any;
+  public wrapper: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  generateRows()
+  passRowsInfo()
   {
     this.navCtrl.push(ProjectPage,
     {
       projectName: this.projectName,
-      numRows: this.numRows
+      numRows: this.numRows,
+      numCols: this.numCols
     });
-    alert(this.projectName);
-    alert(this.numRows);
   }
-
 }
