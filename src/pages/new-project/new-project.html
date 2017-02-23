@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>New Project Settings</ion-title>
   </ion-navbar>
 
@@ -21,6 +21,10 @@
   <ion-item>
     <ion-label>Cols: </ion-label>
     <ion-input type="text" [(ngModel)]="numCols"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Upcoming Project</ion-label>
+    <ion-checkbox [(ngModel)]="upcomingProject"></ion-checkbox>
   </ion-item>
   <button ion-button block (click)="passRowsInfo()">Start New Project</button>
 </ion-content>

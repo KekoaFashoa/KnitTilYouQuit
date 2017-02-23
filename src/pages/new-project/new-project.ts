@@ -1,6 +1,7 @@
 import { Component, Injectable } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ProjectPage } from '../project/project';
+import { UpcomingProjectsPage } from '../upcoming-projects/upcoming-projects';
 
 @Injectable()
 @Component({
@@ -17,16 +18,29 @@ export class NewProjectPage {
   public body: any;
   public footer: any;
   public wrapper: any;
+  public upcomingProject: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   passRowsInfo()
   {
-    this.navCtrl.push(ProjectPage,
+    if(this.upcomingProject == true)
     {
-      projectName: this.projectName,
-      numRows: this.numRows,
-      numCols: this.numCols
-    });
+      this.navCtrl.push(UpcomingProjectsPage,
+      {
+        projectName: this.projectName,
+        numRows: this.numRows,
+        numCols: this.numCols
+      });
+    }
+    else
+    {
+      this.navCtrl.push(ProjectPage,
+      {
+        projectName: this.projectName,
+        numRows: this.numRows,
+        numCols: this.numCols
+      });
+    }
   }
 }
