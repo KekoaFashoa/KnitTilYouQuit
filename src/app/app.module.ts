@@ -16,6 +16,7 @@ import { UpcomingProjectsPage } from '../pages/upcoming-projects/upcoming-projec
 // Providers
 import { FirebaseData } from '../providers/firebase-data';
 import { AuthData } from '../providers/auth-data';
+import { ProfileData } from '../providers/profile-data';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AuthData } from '../providers/auth-data';
   ],
   providers: [
     FirebaseData,
-    AuthData
+    AuthData,
+    ProfileData
   ]
 })
 export class AppModule {}

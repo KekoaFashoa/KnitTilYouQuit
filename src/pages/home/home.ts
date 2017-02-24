@@ -28,7 +28,9 @@ export class HomePage {
     this.navCtrl.push(ProjectPage);
   }
 
-  goToProfile(){ this.navCtrl.push(ProfilePage); }
+  goToProfile(){
+    this.navCtrl.push(ProfilePage);
+  }
 
   logOut(){
     this.authData.logoutUser().then(() => {

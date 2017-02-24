@@ -26,25 +26,26 @@ export class ProjectPage {
     this.projectName = this.navParams.get('projectName');
     this.numRows = this.navParams.get('numRows');
     this.numCols = this.navParams.get('numCols');
-    this.header = '<table border="1">\n';
+    //this.header = '<div>';
     this.body = '';
     for(var i = 0; i < this.numRows; i++)
     {
-        this.body += '<tr>';
-        for(var j = 0; j < this.numCols; j++)
-        {
-            this.body += '<td>';
-            this.body += 'Cell ' + i + ',' + j;
-            this.body += '</td>'
-        }
-        this.body += '</tr>\n';
+        this.body += '<ion-row>';
+        // for(var j = 0; j < this.numCols; j++)
+        // {
+        //     this.body += '<ion-col>';
+        //     this.body += '<ion-item><ion-label>Upcoming roject</ion-label><ion-checkbox [(ngModel)]="upcomingProject"></ion-checkbox></ion-item>';
+        //     this.body += '</ion-col>'
+        // }
+        this.body += '<ion-col offset-50><ion-checkbox [(ngModel)]="upcomingProject">Current</ion-checkbox></ion-col>';
+        this.body += '</ion-row>\n';
     }
-    this.footer = '</table>';
+    //this.footer = '</div>';
 
-    alert(this.header+this.body+this.footer);
+    //alert(this.header+this.body+this.footer);
   }
 
   getWrapper() {
-    document.getElementById('wrapper').innerHTML = this.header + this.body + this.footer;
+    document.getElementById('wrapper').innerHTML = this.body;
   }
 }
