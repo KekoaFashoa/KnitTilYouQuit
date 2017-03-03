@@ -9,7 +9,8 @@ import { UpcomingProjectsPage } from '../upcoming-projects/upcoming-projects';
   templateUrl: 'new-project.html'
 })
 
-export class NewProjectPage {
+export class NewProjectPage
+{
 
   public numRows: any;
   public numCols: any;
@@ -43,4 +44,5 @@ export class NewProjectPage {
       });
     }
   }
+  
 }

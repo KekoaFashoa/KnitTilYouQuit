@@ -11,9 +11,11 @@ import { EmailValidator } from '../../validators/email';
   selector: 'page-reset-password',
   templateUrl: 'reset-password.html',
 })
-export class ResetPasswordPage {
-  public resetPasswordForm;
 
+export class ResetPasswordPage
+{
+
+  public resetPasswordForm;
 
   constructor(public authData: AuthData, public formBuilder: FormBuilder, 
     public nav: NavController, public loadingCtrl: LoadingController, 
@@ -24,13 +26,8 @@ export class ResetPasswordPage {
     })
   }
 
-  /**
-   * If the form is valid it will call the AuthData service to reset the user's password displaying a loading
-   *  component while the user waits.
-   *
-   * If the form is invalid it will just log the form value, feel free to handle that as you like.
-   */
-  resetPassword(){
+  resetPassword()
+  {
     if (!this.resetPasswordForm.valid){
       console.log(this.resetPasswordForm.value);
     } else {
@@ -64,4 +61,5 @@ export class ResetPasswordPage {
       });
     }
   }
+
 }

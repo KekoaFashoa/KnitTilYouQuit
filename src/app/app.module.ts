@@ -1,5 +1,5 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 
@@ -14,7 +14,6 @@ import { ProfilePage } from '../pages/profile/profile';
 import { UpcomingProjectsPage } from '../pages/upcoming-projects/upcoming-projects';
 
 // Providers
-import { FirebaseData } from '../providers/firebase-data';
 import { AuthData } from '../providers/auth-data';
 import { ProfileData } from '../providers/profile-data';
 
@@ -46,9 +45,9 @@ import { ProfileData } from '../providers/profile-data';
     UpcomingProjectsPage
   ],
   providers: [
-    FirebaseData,
     AuthData,
     ProfileData
   ]
 })
+
 export class AppModule {}

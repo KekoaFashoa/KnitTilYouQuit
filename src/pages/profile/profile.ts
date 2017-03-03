@@ -8,7 +8,10 @@ import { LoginPage } from '../login/login';
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
-export class ProfilePage {
+
+export class ProfilePage
+{
+
   public userProfile: any;
   public birthDate: string;
 
@@ -16,20 +19,23 @@ export class ProfilePage {
     public authData: AuthData, public alertCtrl: AlertController) {
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter()
+  {
     this.profileData.getUserProfile().on('value', (data) => {
       this.userProfile = data.val();
       this.birthDate = this.userProfile.birthDate;
     });
   }
 
-  logOut(){
+  logOut()
+  {
     this.authData.logoutUser().then(() => {
       this.navCtrl.setRoot(LoginPage);
     });
   }
 
-  updateName(){
+  updateName()
+  {
     let alert = this.alertCtrl.create({
       message: "Your first name & last name",
       inputs: [
@@ -59,11 +65,13 @@ export class ProfilePage {
     alert.present();
   }
 
-  updateDOB(birthDate){
+  updateDOB(birthDate)
+  {
     this.profileData.updateDOB(birthDate);
   }
 
-  updateEmail(){
+  updateEmail()
+  {
     let alert = this.alertCtrl.create({
       inputs: [
         {
@@ -91,7 +99,8 @@ export class ProfilePage {
     alert.present();
   }
 
-  updatePassword(){
+  updatePassword()
+  {
     let alert = this.alertCtrl.create({
       inputs: [
         {
@@ -119,4 +128,5 @@ export class ProfilePage {
     });
     alert.present();
   }
+  
 }

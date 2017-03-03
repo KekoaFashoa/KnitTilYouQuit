@@ -12,10 +12,12 @@ import { HomePage } from '../home/home';
   selector: 'page-signup',
   templateUrl: 'signup.html'
 })
-export class SignupPage {
+
+export class SignupPage
+{
+
   public signupForm;
   loading: any;
-
 
   constructor(public nav: NavController, public authData: AuthData, 
     public formBuilder: FormBuilder, public loadingCtrl: LoadingController, 
@@ -27,13 +29,8 @@ export class SignupPage {
     })
   }
 
-  /**
-   * If the form is valid it will call the AuthData service to sign the user up password displaying a loading
-   *  component while the user waits.
-   *
-   * If the form is invalid it will just log the form value, feel free to handle that as you like.
-   */
-  signupUser(){
+  signupUser()
+  {
     if (!this.signupForm.valid){
       console.log(this.signupForm.value);
     } else {
@@ -60,4 +57,5 @@ export class SignupPage {
       this.loading.present();
     }
   }
+  
 }

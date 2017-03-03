@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { NewProjectPage } from '../new-project/new-project';
 
 @Component({
   selector: 'page-project',
   templateUrl: 'project.html'
 })
 
-export class ProjectPage {
+export class ProjectPage
+{
 
   public projectName: any;
   public numRows: any;
@@ -17,12 +17,12 @@ export class ProjectPage {
   public footer: any;
   public wrapper: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams)
-  {
+  constructor(public navCtrl: NavController, public navParams: NavParams){
     this.generateRows();
   }
 
-  generateRows() {
+  generateRows()
+  {
     this.projectName = this.navParams.get('projectName');
     this.numRows = this.navParams.get('numRows');
     this.numCols = this.navParams.get('numCols');
@@ -45,7 +45,9 @@ export class ProjectPage {
     //alert(this.header+this.body+this.footer);
   }
 
-  getWrapper() {
+  getWrapper()
+  {
     document.getElementById('wrapper').innerHTML = this.body;
   }
+  
 }

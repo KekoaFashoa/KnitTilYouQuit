@@ -10,29 +10,34 @@ import { ProfilePage } from '../profile/profile';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
 
-  constructor(public navCtrl: NavController, public authData: AuthData) {
-    
-  }
+export class HomePage
+{
 
-  goToLogin(){
+  constructor(public navCtrl: NavController, public authData: AuthData) {}
+
+  goToLogin()
+  {
     this.navCtrl.push(LoginPage);
   }
 
-  goToNewProject(){
+  goToNewProject()
+  {
     this.navCtrl.push(NewProjectPage);
   }
 
-  goToProject(){
+  goToProject()
+  {
     this.navCtrl.push(ProjectPage);
   }
 
-  goToProfile(){
+     goToProfile()
+  {
     this.navCtrl.push(ProfilePage);
   }
 
-  logOut(){
+  logOut()
+  {
     this.authData.logoutUser().then(() => {
       this.navCtrl.setRoot(LoginPage);
     });
